@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electrical Energy Wastage Survey</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .survey-container {
+            max-width: 600px;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="email"], select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="radio"], input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #04AA6D;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .submit-btn:hover {
+            background-color: #039c5b;
+        }
+    </style>
+</head>
+<body>
+
+<div class="survey-container">
+    <h1>Energy Wastage Survey</h1>
+    <form action="/submit_survey" method="POST">
+        <!-- Personal Information -->
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required>
+
+        <!-- Question 1: Device Usage -->
+        <label>Which electronic gadgets do you use most frequently? (Select all that apply)</label>
+        <input type="checkbox" id="laptop" name="gadgets" value="Laptop">
+        <label for="laptop">Laptop</label><br>
+        <input type="checkbox" id="smartphone" name="gadgets" value="Smartphone">
+        <label for="smartphone">Smartphone</label><br>
+        <input type="checkbox" id="tv" name="gadgets" value="TV">
+        <label for="tv">TV</label><br>
+        <input type="checkbox" id="game-console" name="gadgets" value="Game Console">
+        <label for="game-console">Game Console</label><br>
+        <input type="checkbox" id="ac" name="gadgets" value="Air Conditioner">
+        <label for="ac">Air Conditioner</label><br>
+        <input type="checkbox" id="others" name="gadgets" value="Others">
+        <label for="others">Others</label><br>
+
+        <!-- Question 2: Energy-Saving Awareness -->
+        <label>Are you aware of the energy-saving features in your devices?</label>
+        <input type="radio" id="aware-yes" name="energy-awareness" value="Yes" required>
+        <label for="aware-yes">Yes</label><br>
+        <input type="radio" id="aware-no" name="energy-awareness" value="No">
+        <label for="aware-no">No</label><br>
+
+        <!-- Question 3: Charging Habits -->
+        <label>How often do you leave your electronic devices plugged in even when fully charged?</label>
+        <select id="charging-habits" name="charging-habits" required>
+            <option value="Always">Always</option>
+            <option value="Sometimes">Sometimes</option>
+            <option value="Rarely">Rarely</option>
+            <option value="Never">Never</option>
+        </select>
+
+        <!-- Question 4: Device Shutdown -->
+        <label>Do you turn off your gadgets when not in use?</label>
+        <input type="radio" id="shutdown-yes" name="shutdown" value="Yes" required>
+        <label for="shutdown-yes">Yes</label><br>
+        <input type="radio" id="shutdown-no" name="shutdown" value="No">
+        <label for="shutdown-no">No</label><br>
+
+        <!-- Question 5: Solutions to Reduce Wastage -->
+        <label>What practical solutions would you suggest to reduce energy wastage from electronic gadgets? (Optional)</label>
+        <textarea id="suggestions" name="suggestions" rows="4" placeholder="Your suggestions..."></textarea>
+
+        <!-- Submit Button -->
+        <input type="submit" class="submit-btn" value="Submit Survey">
+    </form>
+</div>
+
+</body>
+</html>
